@@ -1,0 +1,33 @@
+Sorry for the bad formatting. Format is:	commandName(minValue,maxValue,dataSize(bytes),headerByteValue,
+							additivity(if true value sent with each command is added (this number can be negative) to the current value, if false just sends that value),
+							logicalPair(i.e. this is feedback from another command, do not put these ones as commands to send to the rover)
+
+// system header types
+systemConfirmation(0,0,0,(byte)0x00,false,null),
+
+// drive header types
+driveAll(1000,2000,2,(byte)0x10,false,null),  driveLeft(1000,2000,2,(byte)0x11,false,null), driveRight(1000,2000,2,(byte)0x12,false,null), drive1(1000,2000,2,(byte)0x13,false,null),
+drive2(1000,2000,2,(byte)0x14,false,null), drive3(1000,2000,2,(byte)0x15,false,null), drive4(1000,2000,2,(byte)0x16,false,null), drive5(1000,2000,2,(byte)0x17,false,null),
+drive6(1000,2000,2,(byte)0x18,false,null),
+
+// arm header types
+armTurretCommand(0,65535,2,(byte)0x20,true,null), armShoulderCommand(0,65535,2,(byte)0x21,true,null), armElbowCommand(0,65535,2,(byte)0x22,true,null), 
+armWristFlapCommand(0,65535,2,(byte)0x23,true,null), armWristRotateCommand(0,65535,2,(byte)0x24,true,null), armGripperCommand(-128,127,1,(byte)0x25,false,null),
+armRotatorCommand(-128,127,1,(byte)0x26,false,null), armShoulderFeedback(0,4095,2,(byte)0x27,false,HeaderType.armShoulderCommand), armShoulderCurrent(0,255,1,(byte)0x28,false,null),
+armElbowFeedback(0,4095,2,(byte)0x29,false,HeaderType.armElbowCommand), armElbowCurrent(0,255,1,(byte)0x2A,false,null), armWristFlapFeedback(0,65535,2,(byte)0x2B,false,HeaderType.armWristFlapCommand),
+armWristRotateFeedback(0,65535,2,(byte)0x2C,false,HeaderType.armWristRotateCommand), armGripperCurrent(0,255,1,(byte)0x2D,false,HeaderType.armGripperCommand),
+
+// gimbal header types
+gimbal((byte)0x30),
+
+// camera header types
+camera((byte)0x40),
+
+// battery header types
+battery((byte)0x50),
+
+// imu header types
+imu((byte)0x60),
+
+// misc header types
+misc((byte)0x70);

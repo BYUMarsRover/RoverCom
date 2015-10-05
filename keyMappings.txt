@@ -1,0 +1,25 @@
+// The format of this file is keycode (see keycode file), command (Valid HeaderType enum value), and value to broadcast (int)
+// Arrow Keys
+37	driveLeft		1750
+38	driveAll		1750	
+39	driveRight		1750
+40	driveAll		1250
+// qweasd
+81	driveLeft		1750
+87	driveAll		1750
+69	driveRight		1750
+65	driveLeft		1250
+83	driveAll		1250
+68	driveRight		1250
+// numpad 789456
+103	driveLeft		1750
+104	driveAll		1750
+105	driveRight		1750
+100	driveLeft		1250
+101	driveAll		1250
+102	driveRight		1250
+// space == brake
+32	driveAll		1500
+// testing (j,k)
+74	armTurretCommand		-2040	armShoulderCommand		-2040		armElbowCommand		-2040
+75	armTurretCommand		2040	armShoulderCommand		2040		armElbowCommand		2040
